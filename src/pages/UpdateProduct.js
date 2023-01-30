@@ -21,7 +21,7 @@ function UpdateProduct(){
             productCost.current.value = response.data.cost;
             productImageUrl.current.value = response.data.image;
         });
-    },[]);
+    },[id]);
 
     const updateProductHandler = () =>{
         var payload = {
