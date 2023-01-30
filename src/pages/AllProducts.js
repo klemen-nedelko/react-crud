@@ -66,7 +66,7 @@ function AllProducts(){
               <Button 
                 variant="primary" 
                 type="button" 
-                onClick={() => navigation(`/edit-fruit/${item.id}`)}>
+                onClick={() => navigation(`/edit-product/${item.id}`)}>
                 Edit product
             </Button>
             <Button 
