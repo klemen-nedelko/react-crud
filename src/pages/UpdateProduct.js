@@ -16,19 +16,19 @@ function UpdateProduct(){
     useEffect(() =>{
         axios.get(`http://localhost:4000/product/${id}`)
         .then((response) =>{
-            productName.current.value = response.data.name;
-            productQuantity.current.value = response.data.quantity;
-            productCost.current.value = response.data.cost;
-            productImageUrl.current.value = response.data.image;
+            productName.current.valueOf = response.data.name;
+            productQuantity.current.valueOf = response.data.quantity;
+            productCost.current.valueOf = response.data.cost;
+            productImageUrl.current.valueOf = response.data.image;
         });
     },[id]);
 
     const updateProductHandler = () =>{
         var payload = {
-            name: productName.current.value,
-            quantity: productQuantity.current.value ? Number(productQuantity.current.value) : 0,
-            cost : productCost.current.value ? Number(productCost.current.value) : 0,
-            imageUrl: productImageUrl.current.value
+            name: productName.current.valueOf,
+            quantity: productQuantity.current.valueOf ? Number(productQuantity.current.valueOf) : 0,
+            cost : productCost.current.valueOf ? Number(productCost.current.valueOf) : 0,
+            imageUrl: productImageUrl.current.valueOf
         }
         axios.put(`http://localhost:4000/product/${id}`, payload).then((response) =>{
             navigate("/");
